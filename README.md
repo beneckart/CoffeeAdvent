@@ -3,7 +3,7 @@ Add a .env file to root that says:
  `OPENAI_API_KEY=sk-proj-FfbiTV...`
 
 
- I have a half-based Flask web app for putting in data and running the algo, but I wouldn't use it. 
+ I have a half-baked Flask web app for putting in data and running the algo, but I wouldn't use it. 
 
  Instead, just run `python app.py` and it will run `run_local_demo()` which just uses a manually created dictionary of people's notes for the day.
 
