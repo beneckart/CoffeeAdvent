@@ -1,0 +1,18 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Tasting Notes Submission</title>
+</head>
+<body>
+    <h1>Submit Your Tasting Notes</h1>
+    <form action="{{ url_for('submit_notes') }}" method="post">
+        <label for="participant">Your Name:</label><br>
+        <input type="text" id="participant" name="participant" required><br><br>
+        <label for="message">Your Tasting Notes:</label><br>
+        <textarea id="message" name="message" rows="5" cols="50" required></textarea><br><br>
+        <input type="submit" value="Submit Notes">
+    </form>
+</body>
+</html>
