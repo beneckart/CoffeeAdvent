@@ -9,7 +9,7 @@ Add a .env file to root that says:
 
  TODO: make web app more usable, including adding field for which day is being input. change sqlite schema to add day field. make sure if it is the first entry for that day to skip running the algorithm
 
- Also, I scraped the official tasting notes and obfuscated them with rot13. Turns out they haven't posted notes for most of the days yet! 
+ Also, I scraped the official tasting notes and obfuscated them with rot13 (see `extract_tasting_notes_2024.py`). Turns out they haven't posted notes for most of the days yet! 
 
 > Qnl 01. Senzvyl: Onxrq Nccyr | Rney Terl | Onxre'f Pubpbyngr | Oreevrf
 > 
