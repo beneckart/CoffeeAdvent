@@ -41,3 +41,11 @@ def get_embeddings(notes): # notes is list
         )
         embeddings.append(response.data[0].embedding)
     return embeddings
+
+if __name__ == '__main__':
+    shane_str = """Wee little beans, prob Ethiopian. Light bodied. Got some white floral, jasmine early on and then some serious lemon acidity as it cooled, maybe a little white peach. Black tea, chamomile, lemon. I feel like I could use a cup of coffee to wash this down.
+
+But Ben, in an attempt to try to pad my scores (and to make your work easier), I'll cut the fluff and just go with: black tea, chamomile, lemon.'"""
+
+    notes = extract_tasting_notes(shane_str)
+    print(notes)

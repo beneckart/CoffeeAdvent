@@ -47,7 +47,7 @@ def load_flavor_wheel_embeddings(filename='flavor_wheel_embeddings.npz'):
 
 flavor_wheel_terms, flavor_wheel_embeddings = get_flavor_wheel_embeddings()
 
-def get_rarity_scores(participants_notes, note_embeddings):
+def get_rarity_scores(participants_notes, note_embeddings, print_info=False):
     # Compute minimum distances and indices
     min_distances, min_indices = compute_min_distances(note_embeddings, flavor_wheel_embeddings,
                                                        return_indices=True)
@@ -57,11 +57,12 @@ def get_rarity_scores(participants_notes, note_embeddings):
 
     rarity_scores = compute_weights(min_distances)
 
-    for note, wheel_term, distance, rarity in zip(participants_notes, closest_wheel_terms, min_distances, rarity_scores):
-        print(f"Participant note: '{note}'")
-        print(f"Closest flavor wheel term: '{wheel_term}'")
-        print(f"Distance: {distance:.4f}\n")
-        print(f"Rarity Score: {rarity:.4f}\n")
+    if print_info:
+        for note, wheel_term, distance, rarity in zip(participants_notes, closest_wheel_terms, min_distances, rarity_scores):
+            print(f"Participant note: '{note}'")
+            print(f"Closest flavor wheel term: '{wheel_term}'")
+            print(f"Distance: {distance:.4f}\n")
+            print(f"Rarity Score: {rarity:.4f}\n")
 
     return [rarity_scores, closest_wheel_terms, min_distances]
 

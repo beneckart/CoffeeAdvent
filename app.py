@@ -106,7 +106,7 @@ def display_matching(notes1, notes2, row_ind, col_ind, sim_matrix, rarity1, rari
         print("\nAll notes from the second participant were matched.")
 
 
-def process_tasting_notes(participants_messages, official_message, sim_threshold=0.45):
+def process_tasting_notes(participants_messages, official_message, sim_threshold=0.5):
     # Extract participant tasting notes
     participants_notes = {}
     participants_embeddings = {}
@@ -258,20 +258,52 @@ def results():
 def run_app():
     app.run(debug=True)
 
-def run_local_demo():
-    # Participants' messages
-    participants_messages = {
+def get_manual_notes():
+    db = {}
+    db[1] = {
         'Ben': 'silky smooth mouthfeel, light cranberry, orange peel, pu-erh tea. sweeter as it cools',
         'Charlotte': 'smells like cedar. dark chocolate, cranberry. Walnut. In that order',
         'Shane': "Sweet, lower acid, but balanced with a  chocolate, candied orange, teensy weensy honeysuckle thing going on. A little too roasty but we'll look the other way because it's packed with holiday spirit.",
         'Shervin': "Smell: Fermented tropical fruit, breadfruit, butterscotch Taste:Durian, guava, white tea, cantaloupe rind. ",
         'Brian': "I don't think I got a good extraction on this one. The flavor is pretty flat. Green grape, unripe peach, light blue gatorade",
         'Mom': "earthy, wet rocks, unburnt charcoal",
-        'Dad': "earthy, round on the tongue, hits middle first then tip, not bitter, just a hint of christmas spice, not quite ripe cherries"
+        'Dad': "earthy, round on the tongue, hits middle first then tip, not bitter, just a hint of christmas spice, not quite ripe cherries",
+        'Onyx': "Baked Apple | Earl Grey | Baker's Chocolate | Berries"
     }
 
+    db[2] = {
+        'Brian':"dark chocolate, orange peel, raisins, hazelnut",
+        'Shane':"Dessert. Fudge and cocoa powder. Rich, juicy mouthfeel, like a big dry red wine.",
+        'Mom':"sour, ground. celery and something sour like  buttermilk and mango. roasted nuts and sweet potatoes",
+        'Dad':"dry clean hay in summer, dark chocolate, s'mores toasted chocolate marshmallows,  smooth dark chocolate with a pleasant aftertaste",
+        'Ben':"cacao, dry, woody, tomato soup, licorice, prune",
+        'Charlotte':"smells like currants and fresh laundry, tastes like black cherry, prune, dry",
+        'Onyx':"Strawberry | Wine | Dark Chocolate | Lime"
+    }
+
+    db[3] = {
+        'Ben': """sweet tea, light molasses, raisin, sweet potato, asparagus""",
+        #'Charlotte': """""",
+        'Shane': """Wee little beans, prob Ethiopian. Light bodied. Got some white floral, jasmine early on and then some serious lemon acidity as it cooled, maybe a little white peach. Black tea, chamomile, lemon. I feel like I could use a cup of coffee to wash this down. But Ben, in an attempt to try to pad my scores (and to make your work easier), I'll cut the fluff and just go with: black tea, chamomile, lemon.""",
+        #'Shervin': """""",
+        'Brian': """lightly vegetal, snap peas, strawberry, apple pie, lemon custard 
+soft mouthfeel with a round body""",
+        #'Mom': """""",
+        #'Dad': """""",
+        'Onyx': "Jasmine | Apricot | Honey | Tea-Like"
+    }
+
+    return db
+
+def run_local_demo(day = 1):
+
+    db = get_manual_notes()
+
     # Official tasting notes
-    official_message = "Baked Apple | Earl Grey | Baker's Chocolate | Berries"
+    official_message = db[day]['Onyx']
+
+    # everyone but onyx
+    participants_messages = dict((k,v) for k, v in db[day].items() if k != 'Onyx')
 
     # Process the tasting notes
     scores_to_official, pairwise_scores = process_tasting_notes(participants_messages, official_message)
@@ -290,4 +322,4 @@ if __name__ == '__main__':
 
     # just running all the functions with manually input notes from people's signal messages
     # so, no sqlite or anything, just all the day's data in a big dictionary
-    run_local_demo()
+    run_local_demo(day=3)
