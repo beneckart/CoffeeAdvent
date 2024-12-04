@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from openai_stuff import extract_tasting_notes, get_embeddings
-
+import sys
 from rarity_metrics import get_rarity_scores
 
 import numpy as np
@@ -272,30 +272,100 @@ def get_manual_notes():
     }
 
     db[2] = {
-        'Brian':"dark chocolate, orange peel, raisins, hazelnut",
-        'Shane':"Dessert. Fudge and cocoa powder. Rich, juicy mouthfeel, like a big dry red wine.",
-        'Mom':"sour, ground. celery and something sour like  buttermilk and mango. roasted nuts and sweet potatoes",
-        'Dad':"dry clean hay in summer, dark chocolate, s'mores toasted chocolate marshmallows,  smooth dark chocolate with a pleasant aftertaste",
-        'Ben':"cacao, dry, woody, tomato soup, licorice, prune",
-        'Charlotte':"smells like currants and fresh laundry, tastes like black cherry, prune, dry",
+        'Brian': "dark chocolate, orange peel, raisins, hazelnut",
+        'Shane': "Dessert. Fudge and cocoa powder. Rich, juicy mouthfeel, like a big dry red wine.",
+        'Mom': "sour, ground. celery and something sour like  buttermilk and mango. roasted nuts and sweet potatoes",
+        'Dad': "dry clean hay in summer, dark chocolate, s'mores toasted chocolate marshmallows,  smooth dark chocolate with a pleasant aftertaste",
+        'Ben': "cacao, dry, woody, tomato soup, licorice, prune",
+        'Charlotte': "smells like currants and fresh laundry, tastes like black cherry, prune, dry",
+        'Shervlin': """Smell: Warm milk
+Taste: Milk chocolate (very milky), smores
+Shervin rating: 5.5
+Caitlin rating: 5.5""",
         'Onyx':"Strawberry | Wine | Dark Chocolate | Lime"
     }
 
     db[3] = {
         'Ben': """sweet tea, light molasses, raisin, sweet potato, asparagus""",
         #'Charlotte': """""",
+        #'Aleda':"""""",
         'Shane': """Wee little beans, prob Ethiopian. Light bodied. Got some white floral, jasmine early on and then some serious lemon acidity as it cooled, maybe a little white peach. Black tea, chamomile, lemon. I feel like I could use a cup of coffee to wash this down. But Ben, in an attempt to try to pad my scores (and to make your work easier), I'll cut the fluff and just go with: black tea, chamomile, lemon.""",
-        #'Shervin': """""",
+        'Shervlin': """Smell: Orange Blossom, Jasmine
+Taste: Green apple, bubble gum, Matcha green tea, lemongrass
+Shervin Rating: 6.5
+Caitlin Rating: 7.5""",
         'Brian': """lightly vegetal, snap peas, strawberry, apple pie, lemon custard 
 soft mouthfeel with a round body""",
-        #'Mom': """""",
-        #'Dad': """""",
+        'Mom': """On her way to Orange Beach to go shelling""",
+        'Dad': """Beans - dried green vegetable, Ground - meaty like beef brisket, Brew - stone fruit, apricots""",
         'Onyx': "Jasmine | Apricot | Honey | Tea-Like"
+    }
+
+    db[4] = {
+        'Ben': """at the start I taste something sweet, something vegetal. festive. like red grape and green beans. as it cools, juicy sweet strawberry and other berries coming through. oily viscous mouthfeel. I really like this one. grade: A-""",
+        # 'Charlotte': """""",
+        # 'Aleda':"""""",
+        'Shane': """Not a fan. I got some ripe cherry  and cinnamon on the nose during brewing but that was likely a mirage. On taste, I’m getting some sour, mostly green, vegetal vibes. Rather than a clean, citrusy finish, I’m getting a weird meaty (not the good, roasty Maillard kind, but more of the leftover hotdog water kind), cereal finish.""",
+        #'Shervlin': """""",
+        #'Brian': """""",
+        #'Mom': """""",
+        'Dad': """Beans - sweet fruity cherries, Ground - citrus fruit orange, Brew - fruity mulled wine, warm sangria""",
+        'Onyx': "Grapefruit | Plum | Sugar Cane | Juicy"
+
+
+    }
+
+    db[5] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Aleda':"""""",
+        'Shane': """""",
+        'Shervlin': """""",
+        'Brian': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Onyx': ""
+    }
+
+    db[6] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Aleda':"""""",
+        'Shane': """""",
+        'Shervlin': """""",
+        'Brian': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Onyx': ""
+    }
+
+    db[7] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Aleda':"""""",
+        'Shane': """""",
+        'Shervlin': """""",
+        'Brian': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Onyx': ""
+    }
+
+    db[8] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Aleda':"""""",
+        'Shane': """""",
+        'Shervlin': """""",
+        'Brian': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Onyx': ""
     }
 
     return db
 
-def run_local_demo(day = 1):
+def run_local_demo(day):
 
     db = get_manual_notes()
 
@@ -310,16 +380,22 @@ def run_local_demo(day = 1):
 
     # Display the results
     print("\nScores to Official Notes:")
-    for participant, score in scores_to_official.items():
-        print(f"{participant}: {score:.4f}")
+    for i, (participant, score) in enumerate(sorted(scores_to_official.items(), key=lambda x: x[1], reverse=True)):
+        print(f"{i+1}. {participant}: {score:.4f}")
 
     print("\nPairwise Agreement Scores:")
-    for pair, score in pairwise_scores.items():
-        print(f"{pair[0]} and {pair[1]}: {score:.4f}")
+    for i, (pair, score) in enumerate(sorted(pairwise_scores.items(), key=lambda x: x[1], reverse=True)):
+        print(f"{i+1}. {pair[0]} and {pair[1]}: {score:.4f}")
 
 if __name__ == '__main__':
-    #run_app() # for running as a Flask web app with sqlite backend
+
+    if len(sys.argv) > 1:
+        day = int(sys.argv[1])  # Convert the argument to an integer
+    else:
+        day = 1
 
     # just running all the functions with manually input notes from people's signal messages
     # so, no sqlite or anything, just all the day's data in a big dictionary
-    run_local_demo(day=3)
+    run_local_demo(day=day)
+
+    # run_app() # for running as a Flask web app with sqlite backend

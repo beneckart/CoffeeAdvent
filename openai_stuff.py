@@ -19,12 +19,12 @@ def extract_tasting_notes(message):
         model="gpt-4o-2024-08-06",
         messages=[
             {"role": "system", "content": "Extract the main tasting notes or flavor descriptors from the following message."},
-            #{"role": "system", "content": "You are a helpful assistant."},
+            #{"role": "system", "content": "The following message describes a coffee tasting. Extract its main tasting notes and flavor descriptors."},
             {"role": "user", "content": message}
         ],
         response_format=CoffeeTasting,
         #max_tokens=1500,
-        #temperature=0,
+        temperature=0,
         #n=1,
     )
     # Accessing response as a Pydantic model
@@ -47,5 +47,7 @@ if __name__ == '__main__':
 
 But Ben, in an attempt to try to pad my scores (and to make your work easier), I'll cut the fluff and just go with: black tea, chamomile, lemon.'"""
 
-    notes = extract_tasting_notes(shane_str)
+    mom_str = """On her way to Orange Beach to go shelling"""
+
+    notes = extract_tasting_notes(mom_str)
     print(notes)
