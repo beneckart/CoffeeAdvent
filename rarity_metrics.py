@@ -1,6 +1,8 @@
 from openai_stuff import get_embeddings
 import os
 import numpy as np
+import requests
+from typing import List, Tuple, Any
 
 
 level_1 = ["Floral", "Fruity", "Sour", "Fermented", "Green", "Vegetative", "Other", "Roasted", "Spices", "Nutty", "Cocoa", "Sweet"]
@@ -29,8 +31,44 @@ level_3 = [
     "Molasses", "Maple Syrup", "Caramelized", "Honey"]
 flavor_wheel_terms = level_1 + level_2 + level_3
 
-# Saving embeddings to a NumPy file if doesn't exist already
-def get_flavor_wheel_embeddings(filename = 'flavor_wheel_embeddings.npz'):
+def get_ngram_frequency(phrase: str, cache={}) -> float:
+    """Get frequency from NGRAMS API with caching"""
+    if phrase in cache:
+        return cache[phrase]
+        
+    base_url = "https://api.ngrams.dev"
+    corpus = "eng"
+    
+    url = f"{base_url}/{corpus}/search"
+    params = {
+        "query": phrase,
+        "flags": "cr",
+        "limit": 1
+    }
+    
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        data = response.json()
+        
+        if data["ngrams"]:
+            freq = data["ngrams"][0]["relTotalMatchCount"]
+        else:
+            freq = 1e-10  # Very small number for phrases not found
+            
+        cache[phrase] = freq
+        return freq
+            
+    except Exception as e:
+        print(f"Error getting frequency for '{phrase}': {str(e)}")
+        return 1e-10
+
+def compute_frequency_rarity(phrase: str) -> float:
+    """Convert ngram frequency to rarity score"""
+    freq = get_ngram_frequency(phrase)
+    return 1 / (np.log(freq + 1e-10) + 0.1)
+
+def get_flavor_wheel_embeddings(filename='flavor_wheel_embeddings.npz'):
     if os.path.exists(filename):
         terms, embeddings = load_flavor_wheel_embeddings(filename)
     else:
@@ -38,33 +76,11 @@ def get_flavor_wheel_embeddings(filename = 'flavor_wheel_embeddings.npz'):
         np.savez_compressed(filename, terms=flavor_wheel_terms, embeddings=embeddings)
     return flavor_wheel_terms, embeddings
 
-# Loading embeddings from a NumPy file
 def load_flavor_wheel_embeddings(filename='flavor_wheel_embeddings.npz'):
     data = np.load(filename, allow_pickle=True)
     terms = data['terms']
     embeddings = data['embeddings']
     return terms, embeddings
-
-flavor_wheel_terms, flavor_wheel_embeddings = get_flavor_wheel_embeddings()
-
-def get_rarity_scores(participants_notes, note_embeddings, print_info=False):
-    # Compute minimum distances and indices
-    min_distances, min_indices = compute_min_distances(note_embeddings, flavor_wheel_embeddings,
-                                                       return_indices=True)
-
-    # Map indices to flavor wheel terms
-    closest_wheel_terms = [flavor_wheel_terms[index] for index in min_indices]
-
-    rarity_scores = compute_weights(min_distances)
-
-    if print_info:
-        for note, wheel_term, distance, rarity in zip(participants_notes, closest_wheel_terms, min_distances, rarity_scores):
-            print(f"Participant note: '{note}'")
-            print(f"Closest flavor wheel term: '{wheel_term}'")
-            print(f"Distance: {distance:.4f}\n")
-            print(f"Rarity Score: {rarity:.4f}\n")
-
-    return [rarity_scores, closest_wheel_terms, min_distances]
 
 def cosine_similarity(vec1, vec2):
     vec1 = np.array(vec1)
@@ -97,16 +113,41 @@ def compute_weights(min_distances, scaling_const=1):
     scaled_weights = np.array([np.exp(distance/scaling_const) for distance in min_distances])/np.exp(0)
     return scaled_weights
 
-def compute_idf_UNUSED(all_notes):
-    ''' discarded idea: not gonna use, unless can find large corpus of previous coffee tasting notes to create the frequencies '''
-    note_counts = defaultdict(int)
-    total_documents = len(all_notes)
-    for notes in all_notes:
-        unique_notes = set(notes.notes)
-        for note in unique_notes:
-            note_counts[note] += 1
-    print(note_counts);
-    idf_scores = {note: math.log(total_documents / count) for note, count in note_counts.items()}
-    print(idf_scores); input()
-    return idf_scores
+def get_rarity_scores(participants_notes, note_embeddings, semantic_weight=0.5, frequency_weight=0.5, print_info=False):
+    #Compute combined rarity scores using both semantic distance and ngram frequency
+    # Normalize weights
+    total = semantic_weight + frequency_weight
+    semantic_weight = semantic_weight / total
+    frequency_weight = frequency_weight / total
+    
+    # Get semantic rarity scores
+    min_distances, min_indices = compute_min_distances(note_embeddings, flavor_wheel_embeddings,
+                                                     return_indices=True)
+    closest_wheel_terms = [flavor_wheel_terms[index] for index in min_indices]
+    semantic_scores = compute_weights(min_distances)
+    
+    # Get frequency-based rarity scores
+    frequency_scores = [compute_frequency_rarity(note) for note in participants_notes]
+    
+    # Combine scores
+    combined_scores = [
+        semantic_weight * sem_score + frequency_weight * freq_score
+        for sem_score, freq_score in zip(semantic_scores, frequency_scores)
+    ]
+    
+    if print_info:
+        for note, wheel_term, distance, sem_score, freq_score, combined in zip(
+            participants_notes, closest_wheel_terms, min_distances, 
+            semantic_scores, frequency_scores, combined_scores
+        ):
+            print(f"\nParticipant note: '{note}'")
+            print(f"Closest flavor wheel term: '{wheel_term}'")
+            print(f"Semantic distance: {distance:.4f}")
+            print(f"Semantic rarity score: {sem_score:.4f}")
+            print(f"Frequency rarity score: {freq_score:.4f}")
+            print(f"Combined rarity score: {combined:.4f}")
+    
+    return [combined_scores, closest_wheel_terms, min_distances]
 
+# Initialize global variables
+flavor_wheel_terms, flavor_wheel_embeddings = get_flavor_wheel_embeddings()

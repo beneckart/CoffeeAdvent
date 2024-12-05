@@ -85,7 +85,7 @@ def display_matching(notes1, notes2, row_ind, col_ind, sim_matrix, rarity1, rari
         status = "Included in Intersection" if is_in_intersection else "Not Included in Intersection"
         print(f" - '{note1}' matched with '{note2}' (Similarity: {sim:.4f}) [{status}]")
 
-        if is_in_intersection and (r1 > 1.65 and r2 > 1.65):
+        if is_in_intersection and (r1 > 0.85 and r2 > 0.85):
             print()
             print(f"  *  RARE MATCH! '{note1}' closest to wheel note '{w1}' (rarity={r1:.4f}) and '{note2}' closest to '{w2}' (rarity={r2:.4f})")
             print()
