@@ -18,13 +18,21 @@ def extract_tasting_notes(message):
     response = client.beta.chat.completions.parse(
         model="gpt-4o-2024-08-06",
         messages=[
-            {"role": "system", "content": "Extract the main tasting notes or flavor descriptors from the following message."},
+            #{"role": "system", "content": "Extract the main tasting notes or flavor descriptors from the following message."},
+            {"role": "system",
+             "content": "Extract the main scents or tasting notes or flavor descriptors from the following message. \
+                         Strictly avoid adding smells or flavors that are not clearly present in the original. \
+                         For example, for 'Got some white floral, jasmine early on and then some serious lemon acidity \
+                         as it cooled, maybe a little white peach' you should return 'floral, jasmine, lemon acidity, \
+                         white peach'. If the message is completely abstract like 'tastes like mowing the lawn', \
+                         you should return something like 'grassy, fresh, loud'. Use your artistic license here but do \
+                         not produce any notes or descriptors that can't be reasonably extracted from the message."},
             #{"role": "system", "content": "The following message describes a coffee tasting. Extract its main tasting notes and flavor descriptors."},
             {"role": "user", "content": message}
         ],
         response_format=CoffeeTasting,
         #max_tokens=1500,
-        temperature=0,
+        #temperature=0,
         #n=1,
     )
     # Accessing response as a Pydantic model
