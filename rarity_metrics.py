@@ -151,3 +151,11 @@ def get_rarity_scores(participants_notes, note_embeddings, semantic_weight=0.5, 
 
 # Initialize global variables
 flavor_wheel_terms, flavor_wheel_embeddings = get_flavor_wheel_embeddings()
+
+
+def do_demo(word_list=['chocolate', 'fruity', 'chamomile', 'musty', 'blue gatorade', 'cat litter']):
+    emb = get_embeddings(word_list)
+    get_rarity_scores(word_list, emb, semantic_weight=0.5, frequency_weight=0.5, print_info=True)
+
+if __name__ == '__main__':
+    do_demo()

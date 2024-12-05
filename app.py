@@ -306,8 +306,12 @@ soft mouthfeel with a round body""",
         # 'Charlotte': """""",
         # 'Aleda':"""""",
         'Shane': """Not a fan. I got some ripe cherry  and cinnamon on the nose during brewing but that was likely a mirage. On taste, I’m getting some sour, mostly green, vegetal vibes. Rather than a clean, citrusy finish, I’m getting a weird meaty (not the good, roasty Maillard kind, but more of the leftover hotdog water kind), cereal finish.""",
-        #'Shervlin': """""",
-        #'Brian': """""",
+        'Shervin': """Bergamot, black tea, whole roasted cocao bean, prune. Dry mouthfeel. Wet fingerfeel.
+Rating: 6/10""",
+        'Caitlin':"""Indistinct nuts and spices with a hint of vanilla and the ghost of apple
+Rating: 6/10""",
+        'Brian': """Smells like chicken soup
+Tasting notes: walnut, roasted carrot, pear, cocoa powder""",
         #'Mom': """""",
         'Dad': """Beans - sweet fruity cherries, Ground - citrus fruit orange, Brew - fruity mulled wine, warm sangria""",
         'Onyx': "Grapefruit | Plum | Sugar Cane | Juicy"
@@ -316,15 +320,18 @@ soft mouthfeel with a round body""",
     }
 
     db[5] = {
-        'Ben': """""",
-        'Charlotte': """""",
-        'Aleda':"""""",
-        'Shane': """""",
-        'Shervlin': """""",
-        'Brian': """""",
-        'Mom': """""",
-        'Dad': """""",
-        'Onyx': ""
+        'Ben': """Smells musty. Like moist gym socks under a McDonalds heat lamp. Taste: Bitter melon, anise, date. Kinda astringent. Maybe some milk chocolate and honey peeking through at the end. Grade: C-""",
+        'Charlotte': """Mild to no smell, light pepper
+tobacco, roasted hazelnut, dash o pomegranate""",
+        'Aleda':"""Sour, ashy, floral """,
+        'Shane': """Notes: cloyingly musty/moldy cardboard, hints of nutty, stale cocoa powder and red/purple fruit like raisin or prune. Green apple type acidity (which makes no sense if the fruit is red/purple 🤷).
+Rating: 5/10
+Circumlocution: I really didn't like this coffee at first; I couldn't get past the dank greyness. But it started tasting a little cleaner and clearer as it cooled and some of the nuttiness and fruit came out.""",
+        #'Shervlin': """""",
+        #'Brian': """""",
+        #'Mom': """""",
+        'Dad': """Beans - deep rich chocolate, Ground - much lighter aroma, some fruit, Brew - lightly flavored, friendly flavor without bitter bite a little sour fruit at the end""",
+        'Onyx': "Chamomile | Raw Sugar | Apple | White Flower"
     }
 
     db[6] = {
