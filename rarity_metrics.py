@@ -1,4 +1,4 @@
-from openai_stuff import get_embeddings
+from openai_stuff import get_embeddings, extract_tasting_notes
 import os
 import numpy as np
 import requests
@@ -68,7 +68,7 @@ def compute_frequency_rarity(phrase: str) -> float:
     freq = get_ngram_frequency(phrase)
     return 1 / (np.log(freq + 1e-10) + 0.1)
 
-def get_flavor_wheel_embeddings(filename='flavor_wheel_embeddings.npz'):
+def get_flavor_wheel_embeddings(filename='./data/flavor_wheel_embeddings.npz'):
     if os.path.exists(filename):
         terms, embeddings = load_flavor_wheel_embeddings(filename)
     else:
@@ -76,7 +76,7 @@ def get_flavor_wheel_embeddings(filename='flavor_wheel_embeddings.npz'):
         np.savez_compressed(filename, terms=flavor_wheel_terms, embeddings=embeddings)
     return flavor_wheel_terms, embeddings
 
-def load_flavor_wheel_embeddings(filename='flavor_wheel_embeddings.npz'):
+def load_flavor_wheel_embeddings(filename='./data/flavor_wheel_embeddings.npz'):
     data = np.load(filename, allow_pickle=True)
     terms = data['terms']
     embeddings = data['embeddings']
@@ -157,5 +157,36 @@ def do_demo(word_list=['chocolate', 'fruity', 'chamomile', 'musty', 'blue gatora
     emb = get_embeddings(word_list)
     get_rarity_scores(word_list, emb, semantic_weight=0.5, frequency_weight=0.5, print_info=True)
 
+def rank_rarity_all():
+    """from daily_notes import get_manual_notes
+
+    all_notes_raw = get_manual_notes() # raw dictionary of all days
+
+    big_text_notes_list = []
+    for day in all_notes_raw.keys():
+        for person, raw_note in all_notes_raw[day].items():
+            notes_lst = extract_tasting_notes(raw_note).notes # string list
+            big_text_notes_list.extend(notes_lst)
+
+    with open('./data/our_tasting_notes.txt', 'w') as f:
+        for note in big_text_notes_list:
+            f.write(note + '\n')"""
+
+    #our_notes = open('./data/our_tasting_notes.txt','r').read().split('\n')
+
+    #emb_lst = get_embeddings(our_notes)
+
+    #np.savez_compressed("./data/our_tasting_notes_embeddings.npz", terms=our_notes, embeddings=emb_lst)
+
+    data = np.load("./data/our_tasting_notes_embeddings.npz", allow_pickle=True)
+    our_notes = data['terms']
+    emb_lst = data['embeddings']
+
+    scores, _, _ = get_rarity_scores(our_notes, emb_lst)
+
+    for i, (sc, note) in enumerate(sorted(zip(scores, our_notes), reverse=True)):
+        print(f"{i:02d}: {note} -- {sc:.4f}")
+
 if __name__ == '__main__':
-    do_demo()
+    rank_rarity_all()
+    #do_demo()
