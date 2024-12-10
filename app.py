@@ -106,7 +106,7 @@ def display_matching(notes1, notes2, row_ind, col_ind, sim_matrix, rarity1, rari
         print("\nAll notes from the second participant were matched.")
 
 
-def process_tasting_notes(participants_messages, official_message, sim_threshold=0.5):
+def process_tasting_notes(participants_messages, official_message, sim_threshold=0.5, verbose=True):
     # Extract participant tasting notes
     participants_notes = {}
     participants_embeddings = {}
@@ -147,15 +147,16 @@ def process_tasting_notes(participants_messages, official_message, sim_threshold
         scores_to_official[participant] = adjusted_score
 
         # Display matching for debugging
-        print(f"\nMatches between {participant} and Official Notes:")
-        display_matching(notes1, notes2, row_ind, col_ind, sim_matrix,
-                         rarity_scores, official_rarity_scores,
-                         closest_wheel_notes, official_closest_wheel_notes,
-                         similarity_threshold=sim_threshold)
+        if verbose:
+            print(f"\nMatches between {participant} and Official Notes:")
+            display_matching(notes1, notes2, row_ind, col_ind, sim_matrix,
+                             rarity_scores, official_rarity_scores,
+                             closest_wheel_notes, official_closest_wheel_notes,
+                             similarity_threshold=sim_threshold)
 
     # Determine the closest participant to the official notes
     winner = max(scores_to_official, key=scores_to_official.get)
-    print(f"The participant closest to the official notes is {winner}.")
+    if verbose: print(f"The participant closest to the official notes is {winner}.")
 
     # Compute pairwise similarities between participants
     participants = list(participants_notes.keys())
@@ -176,18 +177,19 @@ def process_tasting_notes(participants_messages, official_message, sim_threshold
             pairwise_scores[(p1, p2)] = adjusted_score
 
             # Display matching for debugging
-            print(f"\nMatches between {p1} and {p2}:")
-            #display_matching(notes1, notes2, row_ind, col_ind, sim_matrix, similarity_threshold=sim_threshold)
-            display_matching(notes1, notes2, row_ind, col_ind, sim_matrix,
-                             rarity_scores1, rarity_scores2,
-                             closest_wheel_notes1, closest_wheel_notes2,
-                             similarity_threshold=sim_threshold)
+            if verbose:
+                print(f"\nMatches between {p1} and {p2}:")
+                #display_matching(notes1, notes2, row_ind, col_ind, sim_matrix, similarity_threshold=sim_threshold)
+                display_matching(notes1, notes2, row_ind, col_ind, sim_matrix,
+                                 rarity_scores1, rarity_scores2,
+                                 closest_wheel_notes1, closest_wheel_notes2,
+                                 similarity_threshold=sim_threshold)
 
     # Determine the pair with the highest agreement
     most_agreed_pair = max(pairwise_scores, key=pairwise_scores.get)
-    print(f"The pair with the most agreement is {most_agreed_pair[0]} and {most_agreed_pair[1]}.")
+    if verbose: print(f"The pair with the most agreement is {most_agreed_pair[0]} and {most_agreed_pair[1]}.")
 
-    print("Rarest note award")
+    if verbose: print("Rarest note award")
 
     # Initialize a list to collect all notes with their metadata
     all_notes = []
@@ -216,14 +218,15 @@ def process_tasting_notes(participants_messages, official_message, sim_threshold
 
     # Print the top 3 rarest notes along with their metadata
     top_n = 3
-    print(f"Top {top_n} Rarest Notes:")
-    for i in range(min(top_n, len(sorted_notes))):
-        entry = sorted_notes[i]
-        print(f"{i + 1}. Participant: {entry['participant']}")
-        print(f"   Note: '{entry['note']}'")
-        print(f"   Rarity Score: {entry['rarity_score']:.4f}")
-        print(f"   Closest Wheel Note: '{entry['closest_wheel_note']}'")
-        print(f"   Distance to Wheel Note: {entry['distance_to_wheel_note']:.4f}\n")
+    if verbose:
+        print(f"Top {top_n} Rarest Notes:")
+        for i in range(min(top_n, len(sorted_notes))):
+            entry = sorted_notes[i]
+            print(f"{i + 1}. Participant: {entry['participant']}")
+            print(f"   Note: '{entry['note']}'")
+            print(f"   Rarity Score: {entry['rarity_score']:.4f}")
+            print(f"   Closest Wheel Note: '{entry['closest_wheel_note']}'")
+            print(f"   Distance to Wheel Note: {entry['distance_to_wheel_note']:.4f}\n")
 
     return scores_to_official, pairwise_scores
 
@@ -258,7 +261,7 @@ def results():
 def run_app():
     app.run(debug=True)
 
-def run_local_demo(day):
+def run_local_demo(day, verbose=True):
 
     db = get_manual_notes()
 
@@ -269,7 +272,7 @@ def run_local_demo(day):
     participants_messages = dict((k,v) for k, v in db[day].items() if k != 'Onyx')
 
     # Process the tasting notes
-    scores_to_official, pairwise_scores = process_tasting_notes(participants_messages, official_message)
+    scores_to_official, pairwise_scores = process_tasting_notes(participants_messages, official_message, verbose=verbose)
 
     # Display the results
     print("\nScores to Official Notes:")
@@ -289,6 +292,10 @@ if __name__ == '__main__':
 
     # just running all the functions with manually input notes from people's signal messages
     # so, no sqlite or anything, just all the day's data in a big dictionary
-    run_local_demo(day=day)
+    run_local_demo(day=day, verbose=True)
+
+    #for day in range(1, 9):
+    #    print("Day", day)
+    #    run_local_demo(day=day, verbose=False)
 
     # run_app() # for running as a Flask web app with sqlite backend

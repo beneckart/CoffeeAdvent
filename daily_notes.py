@@ -114,20 +114,52 @@ Tasting notes: egg custard and tropical fruit (lime, kiwi, lychee, clementine, b
     }
 
     db[8] = {
-        'Ben': """""",
-        'Charlotte': """""",
-        'Brian': """""",
-        'Aleda':"""""",
-        'Shervin': """""",
-        'Caitlin': """""",
-        'Mom': """""",
-        'Dad': """""",
-        'Shane': """""",
+        'Ben': """smells like delicious brownies, but like, the kind you find at walmart for super cheap with chocolate icing on top. Tasting a bit of earl grey, pineapple, papaya. A bit of sour and acidic punch at the end, like tart apple. Grade: A""",
+        'Charlotte': """clove, cocoa, freezer dried berry medley, red wine maybe a port or a malbec, bitter aftertaste""",
+        'Brian': """Earl Grey tea, tart cherry, strawberry jam""",
+        'Aleda':"""roasted chestnut, black cherry """,
+        'Shervin': """Lilac, Hibiscus, raspberry, kumquat. Sweet floral to start, moving into tart as it cooled""",
+        'Caitlin': """Sweet fruit, maybe a honey peach. Bright mixed berry notes as it cools.""",
+        #'Mom': """""",
+        'Dad': """Beans - Big chocolate, Ground - chocolate covered dried cherries, Brew - dark chocolate fading to milk chocolate as it cooled with a partially burnt driftwood background, Yum""",
+        'Shane': """Tasting notes: nougat, warm spices (anise, nutmeg), orange zest, rose, starburst fruitiness (red berries). 
+Chatter: nice mix of both warm, rich sweet and bright, almost tropical acidity.""",
         'Onyx': "Concord Grape | Vanilla | Pomegranate | 60% Dark Chocolate",
         'Taster': """Juicy, Black Currant, dark cherry, red berries. Floral berry"""
     }
 
     db[9] = {
+        'Ben': """Strong Shirley Temple vibes (7-up base, not ginger ale base) with strawberry, raisins, and jasmine coming through to join the party. I'm guessing Colombia because these beans are heavy and heavy, juicy Colombians have been my obsession lately. Grade: A""",
+        'Charlotte': """smells like an ashtray, but in a kinda good way? blackcurrant and hazelnut""",
+        'Brian': """ground beans smell very smoky and savory
+Taste: Lightly smokey, very balanced and smooth acidity, brown sugar, caramel, hazelnut""",
+        'Aleda':"""prune / raisin - dry fruit - woody - corn 🌽  """,
+        'Shervin': """Cherry, Honeysuckle, white grape, meringue""",
+        'Caitlin': """Molasses, sweet corn, papaya""",
+        #'Mom': """""",
+        'Dad': """Beans - chocolate right as the bag opens but then none after griding and brewing, Ground - dried cherries, asparagus, Brew - light aroma, asparagus with lemon and dried fruit""",
+        'Shane': """Mouthfeel: moderate with some tannins, cereal on the nose.
+Tasting notes: lemon + grapefruit, green apple, hint of rose on the nose (because it rhymes). 
+Chatter: I must have really screwed up brewing this one (over-heated water for the bloom) because it couldn’t be this bad on its own: watery and sour-y rather than good acidity.""",
+        'Taster': """Beautiful notes, acidities""",
+        'Onyx': "Blood Orange | Confectioners Sugar | White Grape | Citrus"
+    }
+
+    db[10] = {
+        'Ben': """red Kool-Aid sweetened with monk fruit. hints of dried fruit at the end. Guessing washed ethiopian beans""",
+        'Charlotte': """yum! tastes like... coffee? pass. I'm in a rush, skip me, I don't want to be at the bottom of the leaderboard""",
+        'Brian': """pretty flat flavor, just hints of lemon zest, pomegranate, and tobacco""",
+        'Aleda':"""musty chocolate pomegranate, savory broth, dry mouth feel """,
+        'Shervin': """Cream, Milk chocolate, white button mushroom, hint of hazelnut. Has a sweetness like full fat cream""",
+        'Caitlin': """Black tea but like Lipton's bottom shelf tea, chocolate and hints of an extremely dried fruit.""",
+        #'Mom': """""",
+        'Dad': """Beans - minerally, rusty iron, Ground - savory, black olives, Brew - all of the above plus sun-dried tomatos, all savory, no sweet, very good""",
+        'Shane': """Tasting notes: bergamot, baker’s chocolate, lemon zest, pear, powdered sugar, aftertaste of metallic (blood/iron) and mineral (slate)""",
+        'Taster': """Sweet, honey, peach, floral, citrus""",
+        'Onyx': "Apricot | Honeysuckle | Earl Grey | Cocoa"
+    }
+
+    db[11] = {
         'Ben': """""",
         'Charlotte': """""",
         'Brian': """""",
@@ -137,6 +169,7 @@ Tasting notes: egg custard and tropical fruit (lime, kiwi, lychee, clementine, b
         'Mom': """""",
         'Dad': """""",
         'Shane': """""",
+        'Taster': """""",
         'Onyx': ""
     }
 
