@@ -160,6 +160,36 @@ Chatter: I must have really screwed up brewing this one (over-heated water for t
     }
 
     db[11] = {
+        'Ben': """beans smell like mint chocolate, grounds smell like a deep, delicious umami chipotle bbq, coffee smelled like hot yoohoo. Taste: bright acidity. Main note by far is tomatillo. Maybe a little sweet cherry, but mostly just tomatillo. Also, I burnt my tongue last night on lava hot bone broth, so not sure I can trust anything about my tasting today.""",
+        #'Charlotte': """""",
+        'Elliot': """slightly sweet, a bit of salt, well balanced with a tangy finish and a hint of orange blossom honey""",
+        'Brian': """Didn't get to this one until it had cooled to room temp
+Asparagus, grapefruit, raspberry, slightly nutty""",
+        #'Aleda':"""""",
+        'Shervin': """Candied pecan, cantaloupe, apricot, lemon""",
+        'Caitlin': """Cacao, tea but a nice floral herbal tea,  orange blossom""",
+        #'Mom': """""",
+        'Dad': """Another vegetable soup day, artichokes, sundried tomatoes, with a dried apricot kicker.""",
+        'Shane': """Tasting notes: slightly caramelized sweetness, tomato, generic yellow or orange stone fruit, tiny bit of orange""",
+        'Taster': """gentle sweetness, acidity, orchard fruit, tea like""",
+        'Onyx': "Dried Cherry | Raw Honey | Papaya | Silky"
+    }
+
+    db[12] = {
+        'Ben': """Beans smell like a gingerbread house. Big dried fruit notes. Immediate impression was raisin/date/prune, but quickly changed to craisin. Cacao nibs, simple syrup, kinda dry. Tiny hint of eggplant somewhere on there.""",
+        'Charlotte': """smells like vanilla sunscreen, strawberry-banana, irish breakfast tea, spinach""",
+        'Brian': """""",
+        'Aleda':"""""",
+        'Shervin': """Freeze dried strawberry, dried fig, green grape. More smell than taste on a lot of the notes""",
+        'Caitlin': """Cream of wheat with black pepper, strawberry frosted shredded wheat, hint of swiss miss hot chocolate with the tiny marshmallows""",
+        'Mom': """""",
+        'Dad': """Beans - molasses and graham cracker, Grind - oak sticks, Brew - bitter tree bark, as it cooled smelled sweeter but never tasted sweeter""",
+        'Shane': """milk chocolate, graham cracker, brown spices (allspice), prune and raisin, cereal grain""",
+        'Taster': """bright cranberry, walnut, vanilla, clove""",
+        'Onyx': "Milk Chocolate | Dried Plum | Lime | Allspice"
+    }
+
+    db[13] = {
         'Ben': """""",
         'Charlotte': """""",
         'Brian': """""",
