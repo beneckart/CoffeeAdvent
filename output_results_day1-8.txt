@@ -1,0 +1,346 @@
+Day 1
+
+Scores to Official Notes:
+1. Charlotte: 0.7826
+2. Shane: 0.3588
+3. Shervlin: 0.3330
+4. Ben: 0.1618
+5. Dad: 0.1531
+6. Taster: 0.1475
+7. Brian: 0.1386
+8. Mom: 0.1147
+
+Pairwise Agreement Scores:
+1. Ben and Shane: 0.7169
+2. Ben and Shervlin: 0.6088
+3. Mom and Dad: 0.4199
+4. Ben and Charlotte: 0.4001
+5. Brian and Taster: 0.3988
+6. Charlotte and Shane: 0.3696
+7. Shane and Shervlin: 0.3563
+8. Dad and Taster: 0.3393
+9. Brian and Dad: 0.3185
+10. Charlotte and Dad: 0.1423
+11. Charlotte and Taster: 0.1360
+12. Charlotte and Shervlin: 0.1319
+13. Ben and Brian: 0.1295
+14. Ben and Dad: 0.1294
+15. Ben and Taster: 0.1292
+16. Shane and Taster: 0.1279
+17. Shane and Dad: 0.1279
+18. Charlotte and Brian: 0.1272
+19. Shervlin and Dad: 0.1118
+20. Mom and Taster: 0.1118
+21. Shervlin and Taster: 0.1109
+22. Shervlin and Brian: 0.1105
+23. Charlotte and Mom: 0.1086
+24. Brian and Mom: 0.1028
+25. Ben and Mom: 0.0978
+26. Shane and Mom: 0.0933
+27. Shane and Brian: 0.0923
+28. Shervlin and Mom: 0.0760
+
+Day 2
+
+Scores to Official Notes:
+1. Taster: 0.7652
+2. Shane: 0.7238
+3. Brian: 0.5571
+4. Dad: 0.4129
+5. Shervlin: 0.3944
+6. Ben: 0.3370
+7. Mom: 0.3018
+8. Charlotte: 0.1589
+
+Pairwise Agreement Scores:
+1. Ben and Charlotte: 0.9102
+2. Brian and Taster: 0.8333
+3. Dad and Shervlin: 0.7480
+4. Shane and Taster: 0.6517
+5. Mom and Taster: 0.4810
+6. Brian and Dad: 0.4798
+7. Brian and Shervlin: 0.4069
+8. Brian and Charlotte: 0.4049
+9. Shervlin and Taster: 0.4034
+10. Shane and Ben: 0.3829
+11. Dad and Taster: 0.3813
+12. Brian and Shane: 0.3730
+13. Shane and Dad: 0.3626
+14. Dad and Ben: 0.3587
+15. Brian and Ben: 0.3477
+16. Shane and Shervlin: 0.3395
+17. Brian and Mom: 0.3279
+18. Charlotte and Taster: 0.3222
+19. Ben and Taster: 0.2850
+20. Ben and Shervlin: 0.2810
+21. Mom and Shervlin: 0.2573
+22. Shane and Charlotte: 0.1627
+23. Mom and Ben: 0.1618
+24. Dad and Charlotte: 0.1544
+25. Shane and Mom: 0.1414
+26. Mom and Dad: 0.1401
+27. Mom and Charlotte: 0.1399
+28. Charlotte and Shervlin: 0.1073
+
+Day 3
+
+Scores to Official Notes:
+1. Taster: 1.7121
+2. Shane: 1.2137
+3. Shervlin: 0.7964
+4. Dad: 0.4205
+5. Ben: 0.4050
+6. Brian: 0.1682
+7. Mom: 0.1059
+
+Pairwise Agreement Scores:
+1. Shane and Shervlin: 2.3323
+2. Shane and Taster: 0.5572
+3. Dad and Taster: 0.4448
+4. Ben and Brian: 0.3998
+5. Shervlin and Brian: 0.3909
+6. Shane and Brian: 0.3714
+7. Ben and Shane: 0.3569
+8. Ben and Taster: 0.3162
+9. Shane and Dad: 0.2939
+10. Brian and Dad: 0.1657
+11. Ben and Shervlin: 0.1584
+12. Ben and Dad: 0.1479
+13. Shervlin and Dad: 0.1392
+14. Mom and Taster: 0.1381
+15. Brian and Taster: 0.1364
+16. Shervlin and Taster: 0.1322
+17. Brian and Mom: 0.0975
+18. Ben and Mom: 0.0931
+19. Mom and Dad: 0.0907
+20. Shervlin and Mom: 0.0829
+21. Shane and Mom: 0.0782
+
+Day 4
+
+Scores to Official Notes:
+1. Shervin: 0.6136
+2. Taster: 0.5624
+3. Shane: 0.5456
+4. Dad: 0.4348
+5. Ben: 0.3215
+6. Caitlin: 0.1643
+7. Brian: 0.1612
+
+Pairwise Agreement Scores:
+1. Ben and Shane: 0.7763
+2. Ben and Taster: 0.5893
+3. Dad and Taster: 0.5105
+4. Caitlin and Brian: 0.4315
+5. Shervin and Taster: 0.3387
+6. Shervin and Brian: 0.3345
+7. Shane and Dad: 0.3046
+8. Shane and Caitlin: 0.2996
+9. Ben and Caitlin: 0.2971
+10. Ben and Dad: 0.2788
+11. Caitlin and Taster: 0.1690
+12. Brian and Taster: 0.1566
+13. Ben and Shervin: 0.1545
+14. Caitlin and Dad: 0.1510
+15. Shane and Shervin: 0.1466
+16. Brian and Dad: 0.1429
+17. Shane and Taster: 0.1427
+18. Shervin and Caitlin: 0.1318
+19. Shervin and Dad: 0.1316
+20. Shane and Brian: 0.1269
+21. Ben and Brian: 0.1260
+
+Day 5
+
+Scores to Official Notes:
+1. Taster: 0.3872
+2. Brian: 0.3870
+3. Aleda: 0.3384
+4. Dad: 0.3355
+5. Charlotte: 0.1528
+6. Shervin: 0.1509
+7. Caitlin: 0.1441
+8. Ben: 0.1242
+9. Shane: 0.1040
+
+Pairwise Agreement Scores:
+1. Brian and Dad: 0.6305
+2. Charlotte and Brian: 0.4617
+3. Brian and Taster: 0.4312
+4. Charlotte and Taster: 0.4206
+5. Ben and Shane: 0.4108
+6. Shervin and Brian: 0.4053
+7. Caitlin and Brian: 0.3937
+8. Ben and Dad: 0.3924
+9. Charlotte and Shervin: 0.3854
+10. Caitlin and Taster: 0.3849
+11. Charlotte and Dad: 0.3705
+12. Caitlin and Dad: 0.3555
+13. Shane and Dad: 0.3541
+14. Charlotte and Caitlin: 0.3445
+15. Shane and Brian: 0.3385
+16. Ben and Taster: 0.3347
+17. Aleda and Dad: 0.3341
+18. Shane and Taster: 0.3304
+19. Dad and Taster: 0.1835
+20. Shervin and Caitlin: 0.1815
+21. Shervin and Taster: 0.1739
+22. Shervin and Dad: 0.1598
+23. Brian and Aleda: 0.1376
+24. Ben and Shervin: 0.1333
+25. Ben and Caitlin: 0.1315
+26. Ben and Brian: 0.1314
+27. Caitlin and Aleda: 0.1308
+28. Ben and Charlotte: 0.1303
+29. Shervin and Aleda: 0.1276
+30. Aleda and Taster: 0.1267
+31. Shane and Shervin: 0.1249
+32. Charlotte and Shane: 0.1195
+33. Shane and Caitlin: 0.1179
+34. Charlotte and Aleda: 0.1161
+35. Ben and Aleda: 0.1108
+36. Shane and Aleda: 0.1020
+
+Day 6
+
+Scores to Official Notes:
+1. Caitlin: 0.6451
+2. Ben: 0.5522
+3. Shane: 0.4990
+4. Brian: 0.3578
+5. Taster: 0.1508
+6. Charlotte: 0.1402
+7. Dad: 0.1396
+8. Shervin: 0.1195
+9. Aleda: 0.0542
+
+Pairwise Agreement Scores:
+1. Brian and Taster: 1.3094
+2. Brian and Dad: 1.2625
+3. Caitlin and Dad: 0.9105
+4. Caitlin and Taster: 0.7603
+5. Charlotte and Taster: 0.7188
+6. Shane and Shervin: 0.6323
+7. Shervin and Taster: 0.5909
+8. Shane and Taster: 0.5702
+9. Shervin and Caitlin: 0.5196
+10. Charlotte and Caitlin: 0.4752
+11. Charlotte and Dad: 0.4421
+12. Dad and Taster: 0.4264
+13. Ben and Shane: 0.4152
+14. Charlotte and Brian: 0.3914
+15. Brian and Caitlin: 0.3895
+16. Shervin and Dad: 0.3292
+17. Ben and Charlotte: 0.3186
+18. Charlotte and Shane: 0.3146
+19. Brian and Shane: 0.2869
+20. Shane and Caitlin: 0.2830
+21. Ben and Caitlin: 0.2775
+22. Ben and Dad: 0.2561
+23. Ben and Shervin: 0.1639
+24. Charlotte and Shervin: 0.1549
+25. Brian and Shervin: 0.1321
+26. Ben and Taster: 0.1267
+27. Shane and Dad: 0.1224
+28. Ben and Brian: 0.1043
+29. Charlotte and Aleda: 0.0702
+30. Brian and Aleda: 0.0569
+31. Aleda and Taster: 0.0550
+32. Aleda and Caitlin: 0.0532
+33. Aleda and Dad: 0.0523
+34. Aleda and Shervin: 0.0452
+35. Ben and Aleda: 0.0317
+36. Aleda and Shane: 0.0317
+
+Day 7
+
+Scores to Official Notes:
+1. Shervin: 0.7931
+2. Brian: 0.6469
+3. Ben: 0.4706
+4. Taster: 0.4078
+5. Aleda: 0.4046
+6. Shane: 0.3530
+7. Dad: 0.1418
+8. Caitlin: 0.1247
+
+Pairwise Agreement Scores:
+1. Brian and Shervin: 0.6874
+2. Shervin and Taster: 0.4357
+3. Brian and Aleda: 0.3928
+4. Brian and Taster: 0.3928
+5. Ben and Shervin: 0.3868
+6. Aleda and Taster: 0.3826
+7. Brian and Dad: 0.3821
+8. Ben and Taster: 0.3724
+9. Shervin and Dad: 0.3631
+10. Ben and Brian: 0.3596
+11. Aleda and Shervin: 0.3507
+12. Caitlin and Dad: 0.2753
+13. Dad and Shane: 0.1610
+14. Dad and Taster: 0.1588
+15. Shervin and Shane: 0.1563
+16. Brian and Shane: 0.1557
+17. Shane and Taster: 0.1533
+18. Ben and Aleda: 0.1472
+19. Aleda and Dad: 0.1453
+20. Ben and Caitlin: 0.1412
+21. Aleda and Shane: 0.1381
+22. Caitlin and Taster: 0.1379
+23. Ben and Shane: 0.1273
+24. Aleda and Caitlin: 0.1205
+25. Shervin and Caitlin: 0.1160
+26. Caitlin and Shane: 0.1142
+27. Ben and Dad: 0.1136
+28. Brian and Caitlin: 0.1100
+
+Day 8
+
+Scores to Official Notes:
+1. Taster: 0.7262
+2. Charlotte: 0.5354
+3. Ben: 0.5172
+4. Dad: 0.4654
+5. Caitlin: 0.3978
+6. Brian: 0.3672
+7. Shervin: 0.3425
+8. Shane: 0.1398
+9. Aleda: 0.1332
+
+Pairwise Agreement Scores:
+1. Charlotte and Dad: 0.8756
+2. Shervin and Taster: 0.7840
+3. Caitlin and Taster: 0.6818
+4. Ben and Brian: 0.6023
+5. Shervin and Caitlin: 0.5790
+6. Brian and Shervin: 0.5459
+7. Ben and Charlotte: 0.5456
+8. Ben and Dad: 0.5055
+9. Brian and Caitlin: 0.4385
+10. Shane and Taster: 0.4189
+11. Brian and Aleda: 0.4103
+12. Aleda and Caitlin: 0.4047
+13. Charlotte and Shane: 0.3938
+14. Dad and Taster: 0.3898
+15. Shervin and Shane: 0.3884
+16. Ben and Shane: 0.3851
+17. Ben and Shervin: 0.3844
+18. Brian and Taster: 0.3751
+19. Charlotte and Taster: 0.3513
+20. Aleda and Taster: 0.3499
+21. Brian and Dad: 0.3186
+22. Caitlin and Shane: 0.2884
+23. Aleda and Dad: 0.2797
+24. Charlotte and Caitlin: 0.2682
+25. Ben and Caitlin: 0.2610
+26. Aleda and Shane: 0.2281
+27. Aleda and Shervin: 0.2214
+28. Charlotte and Shervin: 0.1577
+29. Ben and Taster: 0.1508
+30. Dad and Shane: 0.1420
+31. Caitlin and Dad: 0.1365
+32. Shervin and Dad: 0.1272
+33. Brian and Shane: 0.1078
+34. Charlotte and Brian: 0.1049
+35. Charlotte and Aleda: 0.0920
+36. Ben and Aleda: 0.0726
