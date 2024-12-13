@@ -178,11 +178,11 @@ Asparagus, grapefruit, raspberry, slightly nutty""",
     db[12] = {
         'Ben': """Beans smell like a gingerbread house. Big dried fruit notes. Immediate impression was raisin/date/prune, but quickly changed to craisin. Cacao nibs, simple syrup, kinda dry. Tiny hint of eggplant somewhere on there.""",
         'Charlotte': """smells like vanilla sunscreen, strawberry-banana, irish breakfast tea, spinach""",
-        'Brian': """""",
-        'Aleda':"""""",
+        #'Brian': """""",
+        #'Aleda':"""""",
         'Shervin': """Freeze dried strawberry, dried fig, green grape. More smell than taste on a lot of the notes""",
         'Caitlin': """Cream of wheat with black pepper, strawberry frosted shredded wheat, hint of swiss miss hot chocolate with the tiny marshmallows""",
-        'Mom': """""",
+        #'Mom': """""",
         'Dad': """Beans - molasses and graham cracker, Grind - oak sticks, Brew - bitter tree bark, as it cooled smelled sweeter but never tasted sweeter""",
         'Shane': """milk chocolate, graham cracker, brown spices (allspice), prune and raisin, cereal grain""",
         'Taster': """bright cranberry, walnut, vanilla, clove""",
@@ -190,6 +190,20 @@ Asparagus, grapefruit, raspberry, slightly nutty""",
     }
 
     db[13] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Brian': """""",
+        'Aleda':"""""",
+        'Shervin': """Apricot, Cranberry, Lemon. Stonefruit to start, cooling to a mouth puckering sour.""",
+        'Caitlin': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Shane': """""",
+        'Taster': """Brûléed Grapefruit | Chocolate Cake | Viscous""",
+        'Onyx': "Brûléed Grapefruit | Chocolate Cake | Tobacco | Viscous"
+    }
+
+    db[14] = {
         'Ben': """""",
         'Charlotte': """""",
         'Brian': """""",

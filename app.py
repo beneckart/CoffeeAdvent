@@ -298,4 +298,8 @@ if __name__ == '__main__':
     #    print("Day", day)
     #    run_local_demo(day=day, verbose=False)
 
+    #for day in range(9, 12):
+    #    print("Day", day)
+    #    run_local_demo(day=day, verbose=False)
+
     # run_app() # for running as a Flask web app with sqlite backend

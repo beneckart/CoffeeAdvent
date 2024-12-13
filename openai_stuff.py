@@ -60,16 +60,18 @@ But Ben, in an attempt to try to pad my scores (and to make your work easier), I
 
     mom_str = """On her way to Orange Beach to go shelling"""
 
-    #notes = extract_tasting_notes(mom_str)
-    #print(notes)
+    ben_str = """beans smell like mint chocolate, grounds smell like a deep, delicious umami chipotle bbq, coffee smelled like hot yoohoo. Taste: bright acidity. Main note by far is tomatillo. Maybe a little sweet cherry, but mostly just tomatillo. Also, I burnt my tongue last night on lava hot bone broth, so not sure I can trust anything about my tasting today."""
 
-    test_hoffman = open('./data/hoffman_tasting_notes.txt').readlines()
+    notes = extract_tasting_notes(ben_str)
+    print(notes)
+
+    '''test_hoffman = open('./data/hoffman_tasting_notes.txt').readlines()
 
     for i in range(10):
         notes = extract_tasting_notes(test_hoffman[i])
         print(test_hoffman[i])
         print(notes)
         print()
-        input()
+        input()'''
 
 
