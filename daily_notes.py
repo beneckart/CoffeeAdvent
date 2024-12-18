@@ -190,20 +190,75 @@ Asparagus, grapefruit, raspberry, slightly nutty""",
     }
 
     db[13] = {
-        'Ben': """""",
-        'Charlotte': """""",
-        'Brian': """""",
-        'Aleda':"""""",
+        'Ben': """smells kinda like what I smell like after kayaking Lake Merritt. Angostura bitters, licorice, umeboshi, cabernet""",
+        'Charlotte': """smells like freshly tilled soil, taste of allspice, molasses, pinch of sawdust, blackberry turning to overripe blackberry at the end""",
+        #'Brian': """""",
+        'Aleda':"""burnt s'mores when hot, after cooling more flame torched berries""",
         'Shervin': """Apricot, Cranberry, Lemon. Stonefruit to start, cooling to a mouth puckering sour.""",
-        'Caitlin': """""",
-        'Mom': """""",
-        'Dad': """""",
-        'Shane': """""",
+        'Caitlin': """Roasted holiday spices: cloves, allspice, cinnamon. Very dry with hints of dried prune.""",
+        #'Mom': """""",
+        'Dad': """Beans - sweet cherry cola, Grind - more vegetal than sweet, light balsa pine, Brew - hits the roof of my mouth more than my tongue, sweet cherry cola is back""",
+        'Shane': """Tasting notes: molasses, smoky, citric acid (lemon), green apple""",
         'Taster': """Brûléed Grapefruit | Chocolate Cake | Viscous""",
         'Onyx': "Brûléed Grapefruit | Chocolate Cake | Tobacco | Viscous"
     }
 
     db[14] = {
+        'Ben': """wow. after a minute or two of cooling, becomes lip-smackingly sweet. Lemon verbena, passion fruit, candied citrus""",
+        #'Charlotte': """""",
+        'Brian': """hazelnut, caramel, lavender, concord grape. acidity came through a lot more once it cooled""",
+        #'Aleda':"""""",
+        'Shervin': """Pineapple, lemon tart, bergamot. Chocolate and cherry smell but not so much taste""",
+        'Caitlin': """Bright and fruity smells, strong notes of pineapple, fermented apple, pomegranate, hint of chocolate""",
+        #'Mom': """""",
+        'Dad': """Beans - Queen Anne Milk Chocolate Covered Cordial Cherries, Grind - adds lightly toasted marshmallows, Brew - kept the chocolate sweet cherry notes with very little bitter.  One of my favorites, very Christmassy""",
+        'Shane': """Tasting notes: milk chocolate nuttiness that finishes like dry cacao powder, orange zest, peach, malt, some slight floral thing (chamomile or marigold)""",
+        'Taster': """Sweet, cherry, plum, chocolate of low bitterness""",
+        'Onyx': "Green Apple | Jasmine | Pineapple | Cacao"
+    }
+
+    db[15] = {
+        'Ben': """at first, I got big chocolate orange notes, like those ones wrapped in gold foil. Then came some dried fruits like raisin/cherry with a little strawberry. This one is pretty acidic and bright. Finally, watermelon and prickly pear burst through and stole the show for me""",
+        'Charlotte': """Smells grapalicious. Tastes heavy grape juice, green apple, cocoa powder""",
+        'Brian': """Crisp clean air, 10" of fresh powder, +40 mins of Tahoe traffic""",
+        #'Aleda':"""""",
+        'Shervin': """Clove, molasses, chocolate covered strawberries, date, hibiscus. Started with christmas spice, which completely disappeared for a harmonious sweet and sour""",
+        'Caitlin': """Starts off with chocolate, cools to honey and honeysuckle, peach and cantaloupe.""",
+        #'Mom': """""",
+        'Dad': """Beans - earthy, mushroom, lightly smokey, Grind - green apple sweet and sour, hot pepper, Brew - apple comes through, cozy warm, slight pepper zing""",
+        'Shane': """Tasting notes: rose, honey, cherry, strawberry, raspberry, vanillin, nougat (slight cocoa powder and hazelnut finish) """,
+        'Taster': """Tropical fruits, berries, chocolate""",
+        'Onyx': "Raspberry | Caramel | Milk Chocolate | Red Fruits"}
+
+    db[16] = {
+        'Ben': """flat, muddy, dry, with a bit of sawdust. Maybe some prune and sour milk and a tiny bit of dried apple poking through at the end""",
+        #'Charlotte': """""",
+        #'Brian': """""",
+        'Aleda':"""Malt, Grain, Floral-Rose?, little bit sour on the end
+I actually liked this one. Reminded me of wheat beer at first""",
+        'Shervin': """Peach, banana, mango, pineapple, honey. Yellow fruit. Chatter: Really liked this, whereas most fruit bombs are berry or red, I got tons of yellow fruit from this one. Really sweet and juicy in a way I haven't had before""",
+        'Caitlin': """Roasted chestnut or roasted yerba mate when hot, cools to blueberry and rose, possibly black cherry""",
+        #'Mom': """""",
+        'Dad': """Beans - light milk chocolate just as the bag opens, but didnt last.  Grind - big beans, fluffy grind, not much aroma a thin meaty bouillon, Brew - not much to it, savory, not sweet""",
+        'Shane': """Tasting notes: nutty sweetness, tea-like softness, yellow fruit (or is it stone fruit?), generic floral notes, touch of green apple, maybe prune""",
+        'Taster': """Nutty, stone fruit""",
+        'Onyx': "Rose | White Grape | Fig | Black Tea"}
+
+    db[17] = {
+        'Ben': """A perfectly ripe sweet cherry tomato. You know the kind-- one of those ready-to-burst cherry tomatoes that taste more like candy than tomato. I also got notes of apple cider, honey, orange and ripe cantaloupe. Maybe even a dash of black pepper somewhere in there? Clean and sweet with a balanced tartness.""",
+        #'Charlotte': """""",
+        'Brian': """really nice balanced acidity, prune, peach, green grape, dried figs
+I like this one. It's simple and nice""",
+        'Aleda':"""bottom shelf dry red wine , chocolate but like essence in a 0 calorie drink not the real thing """,
+        'Shervin': """kiwi, hibiscus, green grape, mandarin orange as it cooled. Almond on the nose but not really taste""",
+        'Caitlin': """Blueberry scent, extremely stong English breakfast tea with a few rose petals""",
+        #'Mom': """""",
+        'Dad': """Beans - cocoa powder, red wine, Grind - earthy, orange, bright, Brew - big orange, honeysuckle, bright, acidic, as cooled sweetend and the cocoa came back""",
+        'Shane': """dusty cocoa and hazelnut,  malty cereal, caramelized, brown sugar, jasmine or honeysuckle, not much fruit but maybe some orange peel and a dash of peach""",
+        'Taster': """magnolia, cherry, mango, macadamia nuts, dark chocolate""",
+        'Onyx': "White Flower | Honey | Orange | Berries"}
+
+    db[18] = {
         'Ben': """""",
         'Charlotte': """""",
         'Brian': """""",
@@ -214,7 +269,84 @@ Asparagus, grapefruit, raspberry, slightly nutty""",
         'Dad': """""",
         'Shane': """""",
         'Taster': """""",
-        'Onyx': ""
-    }
+        'Onyx': ""}
+
+    db[19] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Brian': """""",
+        'Aleda':"""""",
+        'Shervin': """""",
+        'Caitlin': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Shane': """""",
+        'Taster': """""",
+        'Onyx': ""}
+
+    db[20] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Brian': """""",
+        'Aleda':"""""",
+        'Shervin': """""",
+        'Caitlin': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Shane': """""",
+        'Taster': """""",
+        'Onyx': ""}
+
+    db[21] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Brian': """""",
+        'Aleda':"""""",
+        'Shervin': """""",
+        'Caitlin': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Shane': """""",
+        'Taster': """""",
+        'Onyx': ""}
+
+    db[22] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Brian': """""",
+        'Aleda':"""""",
+        'Shervin': """""",
+        'Caitlin': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Shane': """""",
+        'Taster': """""",
+        'Onyx': ""}
+
+    db[23] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Brian': """""",
+        'Aleda':"""""",
+        'Shervin': """""",
+        'Caitlin': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Shane': """""",
+        'Taster': """""",
+        'Onyx': ""}
+
+    db[24] = {
+        'Ben': """""",
+        'Charlotte': """""",
+        'Brian': """""",
+        'Aleda':"""""",
+        'Shervin': """""",
+        'Caitlin': """""",
+        'Mom': """""",
+        'Dad': """""",
+        'Shane': """""",
+        'Taster': """""",
+        'Onyx': ""}
 
     return db
